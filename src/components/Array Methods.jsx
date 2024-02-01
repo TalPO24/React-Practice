@@ -10,3 +10,4 @@
 const myArray = ["Apple", "banana", "Orange"];
 
 const myList = myArray.map((item) => <p>{item}</p>);
+//
