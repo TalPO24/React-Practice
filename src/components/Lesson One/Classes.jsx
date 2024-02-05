@@ -1,6 +1,6 @@
 /* Classes */
 
-// A simple class onstructor:
+// A simple class constructor:
 class Car {
   constructor(name) {
     this.brand = name;
@@ -21,7 +21,7 @@ const mycar = new Car("Ford");
 
 /* Method in Classes */
 
-//You can add your own methods in clases
+//You can add your own methods in classes
 class Car {
   constructor(name) {
     this.brand = name;

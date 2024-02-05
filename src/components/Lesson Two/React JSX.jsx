@@ -1,7 +1,7 @@
 // React JSX
 
 // What is JSX?
-//JSX stands for JavaScript XML.
+// JSX stands for JavaScript XML.
 // JSX allows us to write HTML in react.
 // JSX makes it easier to write and add HTML in React;
 

@@ -25,7 +25,7 @@ root.render(<p>Hello</p>);
   <div id="root"></div>
 </body>;
 
-// Note that the element id does nor have to be called "root", but this is the standard convention.
+// Note that the element id does not have to be called "root", but this is the standard convention.
 
 // The HTML Code
 
