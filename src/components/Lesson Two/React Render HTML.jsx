@@ -16,7 +16,7 @@
 // You'll notice a single <div> in the body of this file. This is where our React application will be rendered.
 
 //Example
-// Display a paragraph isnside an element with the id of "root":
+// Display a paragraph inside an element with the id of "root":
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 root.render(<p>Hello</p>);

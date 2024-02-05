@@ -1,9 +1,8 @@
 // React Forms
 
-//Just like in HTML, React uses forms to allow users to interact with the web page.
+// Just like in HTML, React uses forms to allow users to interact with the web page.
 
-//Adding Forms in React
-You add a form with React like any other element:
+// Adding Forms in React-You add a form with React like any other element:
 
 //Example:
 //Add a form that allows users to enter their name:
@@ -11,13 +10,14 @@ You add a form with React like any other element:
 function MyForm() {
   return (
     <form>
-      <label>Enter your name:
+      <label>
+        Enter your name:
         <input type="text" />
       </label>
     </form>
-  )
+  );
 }
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<MyForm />);
 
 //This will work as normal, the form will submit and the page will refresh.
@@ -42,26 +42,27 @@ root.render(<MyForm />);
 // Example:
 // Use the useState Hook to manage the input:
 
-import { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
 
 function MyForm() {
   const [name, setName] = useState("");
 
   return (
     <form>
-      <label>Enter your name:
+      <label>
+        Enter your name:
         <input
-          type="text" 
+          type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </label>
     </form>
-  )
+  );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<MyForm />);
 
 // Submitting Forms
@@ -70,32 +71,33 @@ root.render(<MyForm />);
 // Example:
 // Add a submit button and an event handler in the onSubmit attribute:
 
-import { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
 
 function MyForm() {
   const [name, setName] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The name you entered was: ${name}`)
-  }
+    alert(`The name you entered was: ${name}`);
+  };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Enter your name:
-        <input 
-          type="text" 
+      <label>
+        Enter your name:
+        <input
+          type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </label>
       <input type="submit" />
     </form>
-  )
+  );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<MyForm />);
 
 // Multiple Input Fields
@@ -110,8 +112,8 @@ root.render(<MyForm />);
 // Example:
 // Write a form with two input fields:
 
-import { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
 
 function MyForm() {
   const [inputs, setInputs] = useState({});
@@ -119,38 +121,40 @@ function MyForm() {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
-  }
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     alert(inputs);
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Enter your name:
-      <input 
-        type="text" 
-        name="username" 
-        value={inputs.username || ""} 
-        onChange={handleChange}
-      />
-      </label>
-      <label>Enter your age:
-        <input 
-          type="number" 
-          name="age" 
-          value={inputs.age || ""} 
+      <label>
+        Enter your name:
+        <input
+          type="text"
+          name="username"
+          value={inputs.username || ""}
           onChange={handleChange}
         />
-        </label>
-        <input type="submit" />
+      </label>
+      <label>
+        Enter your age:
+        <input
+          type="number"
+          name="age"
+          value={inputs.age || ""}
+          onChange={handleChange}
+        />
+      </label>
+      <input type="submit" />
     </form>
-  )
+  );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<MyForm />);
 
 // Note: We use the same event handler function for both input fields, we could write one event handler for each, but this gives us much cleaner code and is the preferred way in React.
@@ -163,9 +167,11 @@ root.render(<MyForm />);
 // HTML:
 <select>
   <option value="Ford">Ford</option>
-  <option value="Volvo" selected>Volvo</option>
+  <option value="Volvo" selected>
+    Volvo
+  </option>
   <option value="Fiat">Fiat</option>
-</select>
+</select>;
 
 // In React, the selected value is defined with a value attribute on the select tag:
 
@@ -176,8 +182,8 @@ function MyForm() {
   const [myCar, setMyCar] = useState("Volvo");
 
   const handleChange = (event) => {
-    setMyCar(event.target.value)
-  }
+    setMyCar(event.target.value);
+  };
 
   return (
     <form>
@@ -187,5 +193,5 @@ function MyForm() {
         <option value="Fiat">Fiat</option>
       </select>
     </form>
-  )
+  );
 }
